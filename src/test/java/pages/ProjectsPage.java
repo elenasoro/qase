@@ -14,6 +14,7 @@ public class ProjectsPage {
     private SelenideElement createProjectButton = $(By.id("createButton"));
     private SelenideElement projectsTable = $(By.xpath("//table[contains(@class, 'projects-table')]"));
     private ElementsCollection projectsList = $$(By.xpath("//table[contains(@class, 'projects-table')]//a[contains(@class, 'defect-title')]"));
+    private SelenideElement firstProjectLink = $(By.xpath("//table[contains(@class, 'projects-table')]//a[contains(@class, 'defect-title')][1]"));
 
     public ProjectsPage openProjectsPage() {
         open(Urls.PROJECTS_URL);
@@ -35,5 +36,11 @@ public class ProjectsPage {
             }
         }
         return result;
+    }
+
+    public ProjectsPage openFirstProjectRepo() {
+        firstProjectLink.shouldBe(Condition.visible, Duration.ofSeconds(5));
+        firstProjectLink.click();
+        return this;
     }
 }

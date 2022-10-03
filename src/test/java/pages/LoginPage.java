@@ -2,7 +2,10 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import constants.Credentials;
 import constants.Urls;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 
 import java.time.Duration;
@@ -15,12 +18,18 @@ public class LoginPage {
     private SelenideElement passwordField = $(By.id("inputPassword"));
     private SelenideElement loginButton = $(By.id("btnLogin"));
 
+    private static final Logger LOGGER = LogManager.getLogger(LoginPage.class.getName());
+
     public ProjectsPage login(String email, String password) {
         open(Urls.LOGIN_URL);
+        LOGGER.info(String.format("Page %s opened", LoginPage.class.getName()));
         emailField.sendKeys(email);
+        LOGGER.info(String.format("Email is entered"));
         passwordField.sendKeys(password);
+        LOGGER.info(String.format("Password is entered"));
         loginButton.shouldBe(Condition.enabled, Duration.ofSeconds(5));
         loginButton.click();
+        LOGGER.info(String.format("Login button clicked"));
         return new ProjectsPage();
     }
 
