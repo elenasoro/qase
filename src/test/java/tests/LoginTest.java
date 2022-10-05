@@ -1,6 +1,5 @@
 package tests;
 
-import constants.Credentials;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
