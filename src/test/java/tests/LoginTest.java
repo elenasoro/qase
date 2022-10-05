@@ -24,7 +24,8 @@ public class LoginTest extends BaseTest{
     public void loginTest() {
         LoginPage loginPage = new LoginPage();
         boolean isProjectsPageDisplayed = loginPage.
-                login(Credentials.EMAIL, Credentials.PASSWORD_FOR_LOGIN)
+//                login(Credentials.EMAIL, Credentials.PASSWORD_FOR_LOGIN)
+        login(System.getProperty("email", "sorokina.eln@gmail.com"), System.getProperty("password", "12345123"))
                 .isCreateButtonDisplayed();
         Assert.assertTrue(isProjectsPageDisplayed, "User is not logged in");
     }

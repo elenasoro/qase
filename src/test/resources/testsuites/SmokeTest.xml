@@ -5,61 +5,51 @@
     <test name="Login">
         <classes>
             <class name="tests.LoginTest"></class>
-            <parameter name="browser" value="chrome"></parameter>
         </classes>
     </test>
-    <test name="Create new project">
-        <classes>
-            <class name="tests.CreateProjectTest"></class>
-            <parameter name="browser" value="chrome"></parameter>
-        </classes>
-    </test>
-    <test name="Create new suite">
-        <classes>
-            <class name="tests.CreateSuiteTest"></class>
-            <parameter name="browser" value="chrome"></parameter>
-        </classes>
-    </test>
-    <test name="Create new test case">
-        <classes>
-            <class name="tests.CreateCaseTest"></class>
-            <parameter name="browser" value="chrome"></parameter>
-        </classes>
-    </test>
-    <test name="Start test run">
-        <classes>
-            <class name="tests.StartRunTest"></class>
-            <parameter name="browser" value="chrome"></parameter>
-        </classes>
-    </test>
-    <test name="Mark test case as Passed">
-        <classes>
-            <class name="tests.PassCaseTest"></class>
-            <parameter name="browser" value="chrome"></parameter>
-        </classes>
-    </test>
-    <test name="Mark test case as Failed">
-        <classes>
-            <class name="tests.FailCaseTest"></class>
-            <parameter name="browser" value="chrome"></parameter>
-        </classes>
-    </test>
-    <test name="Create defect">
-        <classes>
-            <class name="tests.CreateDefectTest"></class>
-            <parameter name="browser" value="chrome"></parameter>
-        </classes>
-    </test>
-    <test name="Check defect lifecycle">
-        <classes>
-            <class name="tests.DefectLifecycleTest"></class>
-            <parameter name="browser" value="chrome"></parameter>
-        </classes>
-    </test>
-    <test name="Invite new member">
-        <classes>
-            <class name="tests.InviteMemberTest"></class>
-            <parameter name="browser" value="chrome"></parameter>
-        </classes>
-    </test>
+<!--    <test name="Create new project">-->
+<!--        <classes>-->
+<!--            <class name="tests.CreateProjectTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Create new suite">-->
+<!--        <classes>-->
+<!--            <class name="tests.CreateSuiteTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Create new test case">-->
+<!--        <classes>-->
+<!--            <class name="tests.CreateCaseTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Start test run">-->
+<!--        <classes>-->
+<!--            <class name="tests.StartRunTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Mark test case as Passed">-->
+<!--        <classes>-->
+<!--            <class name="tests.PassCaseTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Mark test case as Failed">-->
+<!--        <classes>-->
+<!--            <class name="tests.FailCaseTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Create defect">-->
+<!--        <classes>-->
+<!--            <class name="tests.CreateDefectTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Check defect lifecycle">-->
+<!--        <classes>-->
+<!--            <class name="tests.DefectLifecycleTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Invite new member">-->
+<!--        <classes>-->
+<!--            <class name="tests.InviteMemberTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
