@@ -2,7 +2,6 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import constants.Credentials;
 import constants.Urls;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
