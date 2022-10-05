@@ -1,12 +1,13 @@
 package tests;
 
-import constants.Credentials;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import models.LoginModel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import testdata.PrepareLoginData;
 import utils.RetryAnalyzer;
 
 public class LoginTest extends BaseTest{
@@ -23,9 +24,9 @@ public class LoginTest extends BaseTest{
     @Severity(SeverityLevel.BLOCKER)
     public void loginTest() {
         LoginPage loginPage = new LoginPage();
-        boolean isProjectsPageDisplayed = loginPage.
-//                login(Credentials.EMAIL, Credentials.PASSWORD_FOR_LOGIN)
-        login(System.getProperty("email", "sorokina.eln@gmail.com"), System.getProperty("password", "12345123"))
+        LoginModel loginModel = PrepareLoginData.getValidData();
+        boolean isProjectsPageDisplayed = loginPage
+                .login(loginModel)
                 .isCreateButtonDisplayed();
         Assert.assertTrue(isProjectsPageDisplayed, "User is not logged in");
     }

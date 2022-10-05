@@ -1,13 +1,14 @@
 package tests;
 
-import constants.Credentials;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import models.LoginModel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.InvitesPage;
 import pages.LoginPage;
+import testdata.PrepareLoginData;
 import utils.RetryAnalyzer;
 
 public class InviteMemberTest extends BaseTest{
@@ -16,7 +17,8 @@ public class InviteMemberTest extends BaseTest{
     @Severity(SeverityLevel.CRITICAL)
     public void inviteMemberTest() {
         LoginPage loginPage = new LoginPage();
-        loginPage.login(Credentials.EMAIL, Credentials.PASSWORD_FOR_LOGIN);
+        LoginModel loginModel = PrepareLoginData.getValidData();
+        loginPage.login(loginModel);
         InvitesPage invitesPage = new InvitesPage();
         boolean isSuccessNotificationDisplayed = invitesPage
                 .openInvitesPage()

@@ -1,14 +1,15 @@
 package tests;
 
-import constants.Credentials;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import models.LoginModel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ProjectRepositoryPage;
 import pages.ProjectsPage;
+import testdata.PrepareLoginData;
 import utils.RetryAnalyzer;
 
 public class CreateDefectTest extends BaseTest{
@@ -17,7 +18,8 @@ public class CreateDefectTest extends BaseTest{
     @Severity(SeverityLevel.CRITICAL)
     public void createDefectTest() {
         LoginPage loginPage = new LoginPage();
-        loginPage.login(Credentials.EMAIL, Credentials.PASSWORD_FOR_LOGIN);
+        LoginModel loginModel = PrepareLoginData.getValidData();
+        loginPage.login(loginModel);
         ProjectsPage projectsPage = new ProjectsPage();
         projectsPage.openFirstProjectRepo();
         ProjectRepositoryPage projectRepositoryPage = new ProjectRepositoryPage();
