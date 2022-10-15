@@ -32,7 +32,7 @@ public class CreateProjectTest extends BaseTest{
         NewProjectPage newProjectPage = new NewProjectPage();
         NewProjectModel projectModel = PrepareNewProjectData.getValidData();
         newProjectPage
-                .openNewProjectPage()
+                .openProjectPage()
                 .fillInCreateForm(projectModel);
         ProjectsPage projectsPage = new ProjectsPage();
         boolean isProjectCreated = projectsPage.openProjectsPage().isCreatedProjectPresent(projectModel.getName());
