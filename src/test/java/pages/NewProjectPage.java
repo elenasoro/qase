@@ -9,9 +9,9 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class NewProjectPage {
-    private SelenideElement projectNameField = $(By.id("inputTitle"));
-    private SelenideElement projectCodeField = $(By.id("inputCode"));
-    private SelenideElement projectDescriptionField = $(By.id("inputDescription"));
+    private SelenideElement projectNameField = $(By.id("project-name"));
+    private SelenideElement projectCodeField = $(By.id("project-code"));
+    private SelenideElement projectDescriptionField = $(By.id("description-area"));
     private SelenideElement createProjectButton = $(By.xpath("//button[contains(text(), 'Create project')]"));
 
     public NewProjectPage openNewProjectPage() {
