@@ -16,9 +16,7 @@ public class LoginTest extends BaseTest{
             groups = {"smoke"},
             priority = 1,
             description = "Successful login to the app",
-            retryAnalyzer = RetryAnalyzer.class,
-            threadPoolSize = 2,
-            invocationCount = 2
+            retryAnalyzer = RetryAnalyzer.class
     )
     @Description("Successful login to the app")
     @Severity(SeverityLevel.BLOCKER)

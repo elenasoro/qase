@@ -19,8 +19,7 @@ public class CreateSuiteTest extends BaseTest{
             groups = {"smoke"},
             priority = 1,
             description = "Check that new suite is created successfully",
-            retryAnalyzer = RetryAnalyzer.class,
-            threadPoolSize = 2
+            retryAnalyzer = RetryAnalyzer.class
     )
     @Description("Check that new suite is created successfully")
     @Severity(SeverityLevel.BLOCKER)
