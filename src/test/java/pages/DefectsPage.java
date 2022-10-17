@@ -3,7 +3,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.github.javafaker.Faker;
+import models.NewDefectModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -30,10 +30,9 @@ public class DefectsPage {
     private SelenideElement confirmButton = $(By.xpath("//button[contains(text(), 'Confirm')]"));
 
 
-    public DefectsPage fillInCreateDefectsForm() {
-        Faker faker = new Faker();
-        String defectTitle = faker.harryPotter().book();
-        String actualResult = faker.harryPotter().quote();
+    public DefectsPage fillInCreateDefectsForm(NewDefectModel defectModel) {
+        String defectTitle = defectModel.getTitle();
+        String actualResult = defectModel.getActualResult();
         createDefectButton.click();
         LOGGER.info(String.format("Create defect button clicked"));
         titleInput.shouldBe(Condition.visible, Duration.ofSeconds(5));

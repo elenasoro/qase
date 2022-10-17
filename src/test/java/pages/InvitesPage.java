@@ -2,8 +2,8 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.github.javafaker.Faker;
 import constants.Urls;
+import models.NewMemberModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -33,11 +33,10 @@ public class InvitesPage {
         return this;
     }
 
-    public InvitesPage fillInNewMemberForm() {
-        Faker faker = new Faker();
-        String email = faker.internet().emailAddress();
-        String name = faker.artist().name();
-        String role = faker.gameOfThrones().character();
+    public InvitesPage fillInNewMemberForm(NewMemberModel memberModel) {
+        String email = memberModel.getEmail();
+        String name = memberModel.getName();
+        String role = memberModel.getRole();
 
         inviteMemberButton.click();
         emailInput.shouldBe(Condition.visible, Duration.ofSeconds(5));

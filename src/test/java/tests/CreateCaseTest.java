@@ -4,12 +4,14 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import models.LoginModel;
+import models.NewCaseModel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ProjectRepositoryPage;
 import pages.ProjectsPage;
 import testdata.PrepareLoginData;
+import testdata.PrepareNewCaseData;
 import utils.RetryAnalyzer;
 
 public class CreateCaseTest extends BaseTest{
@@ -28,9 +30,10 @@ public class CreateCaseTest extends BaseTest{
         ProjectsPage projectsPage = new ProjectsPage();
         projectsPage.openFirstProjectRepo();
         ProjectRepositoryPage projectRepositoryPage = new ProjectRepositoryPage();
+        NewCaseModel caseModel = PrepareNewCaseData.getValidData();
         boolean isSuccessNotificationDisplayed = projectRepositoryPage
                 .openCreateCasePage()
-                .fillInCreateCaseForm()
+                .fillInCreateCaseForm(caseModel)
                 .isCaseNotificationDisplayed();
         Assert.assertTrue(isSuccessNotificationDisplayed, "Case is not created");
     }

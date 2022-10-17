@@ -2,7 +2,7 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.github.javafaker.Faker;
+import models.NewCaseModel;
 import models.NewSuiteModel;
 import org.openqa.selenium.By;
 
@@ -58,9 +58,8 @@ public class ProjectRepositoryPage {
         return this;
     }
 
-    public ProjectRepositoryPage fillInCreateCaseForm() {
-        Faker faker = new Faker();
-        String caseTitle = faker.harryPotter().quote();
+    public ProjectRepositoryPage fillInCreateCaseForm(NewCaseModel caseModel) {
+        String caseTitle = caseModel.getTitle();
         titleInput.shouldBe(Condition.visible, Duration.ofSeconds(5));
         titleInput.sendKeys(caseTitle);
         saveCaseButton.click();
