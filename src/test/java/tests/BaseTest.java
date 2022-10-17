@@ -29,9 +29,9 @@ public class BaseTest {
         options.addArguments("--disable-popup-blocking");
     }
 
-    @AfterMethod(alwaysRun = true)
-    public void tearDown() {
-        WebDriverRunner.getWebDriver().quit();
-    }
+//    @AfterMethod(alwaysRun = true)
+//    public void tearDown() {
+//        WebDriverRunner.getWebDriver().quit();
+//    }
 
 }
