@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import models.NewCaseModel;
 import models.NewSuiteModel;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 
 import java.time.Duration;
@@ -11,6 +13,9 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.$;
 
 public class ProjectRepositoryPage {
+
+    private static final Logger LOGGER = LogManager.getLogger(LoginPage.class.getName());
+
     private SelenideElement createSuiteButton = $(By.id("create-suite-button"));
     private SelenideElement createSuiteFormTitle = $(By.xpath("//form//h2[contains(text(), 'Create suite')]"));
     private SelenideElement suiteNameInput = $(By.id("name"));
@@ -62,6 +67,7 @@ public class ProjectRepositoryPage {
         String caseTitle = caseModel.getTitle();
         titleInput.shouldBe(Condition.visible, Duration.ofSeconds(5));
         titleInput.sendKeys(caseTitle);
+        LOGGER.info(String.format("Case title entered - %s", caseTitle));
         saveCaseButton.click();
         return this;
     }
@@ -75,5 +81,4 @@ public class ProjectRepositoryPage {
         successCaseNotification.shouldBe(Condition.visible, Duration.ofSeconds(5));
         return successCaseNotification.isDisplayed();
     }
-
 }

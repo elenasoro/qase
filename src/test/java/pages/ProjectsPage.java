@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import constants.Urls;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 
 import java.time.Duration;
@@ -11,6 +13,9 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ProjectsPage {
+
+    private static final Logger LOGGER = LogManager.getLogger(LoginPage.class.getName());
+
     private SelenideElement createProjectButton = $(By.id("createButton"));
     private SelenideElement projectsTable = $(By.xpath("//table[contains(@class, 'projects-table')]"));
     private ElementsCollection projectsList = $$(By.xpath("//table[contains(@class, 'projects-table')]//a[contains(@class, 'defect-title')]"));
@@ -32,6 +37,7 @@ public class ProjectsPage {
         for(SelenideElement element : projectsList){
             if (element.getText().equals(companyName)){
                 result = true;
+                LOGGER.info(String.format("Project %s is found", companyName));
                 break;
             }
         }

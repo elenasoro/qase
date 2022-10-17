@@ -2,6 +2,8 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 
 import java.time.Duration;
@@ -9,6 +11,9 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.$;
 
 public class TestRunsPage {
+
+    private static final Logger LOGGER = LogManager.getLogger(LoginPage.class.getName());
+
     private SelenideElement startRunButton = $(By.id("start-new-test-run-button"));
     private SelenideElement addCasesButton = $(By.id("edit-run-add-cases-button"));
     private SelenideElement firstSuiteCheckbox = $(By.xpath("//div[@class='checkbox'][1]//span"));
@@ -52,12 +57,17 @@ public class TestRunsPage {
     public TestRunsPage failCase() {
         firstRunTitle.shouldBe(Condition.visible, Duration.ofSeconds(5));
         firstRunTitle.click();
+        LOGGER.info(String.format("First run is opened"));
         secondCaseLink.click();
+        LOGGER.info(String.format("Second case is opened"));
         failButton.click();
+        LOGGER.info(String.format("Fail button is clicked"));
         addResultButton.shouldBe(Condition.visible, Duration.ofSeconds(5));
         addResultButton.click();
+        LOGGER.info(String.format("Add result button is clicked"));
         cancelButton.shouldBe(Condition.visible, Duration.ofSeconds(5));
         cancelButton.click();
+        LOGGER.info(String.format("Cancel button is clicked"));
         return this;
     }
 
@@ -70,5 +80,4 @@ public class TestRunsPage {
         failedLabel.shouldBe(Condition.visible, Duration.ofSeconds(5));
         return failedLabel.isDisplayed();
     }
-
 }

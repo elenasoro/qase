@@ -59,5 +59,4 @@ public class InvitesPage {
         successNotification.shouldBe(Condition.visible, Duration.ofSeconds(5));
         return successNotification.isDisplayed();
     }
-
 }
