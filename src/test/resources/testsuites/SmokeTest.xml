@@ -6,11 +6,11 @@
             <class name="tests.LoginTest"></class>
         </classes>
     </test>
-<!--    <test name="Create new project">-->
-<!--        <classes>-->
-<!--            <class name="tests.CreateProjectTest"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Create new project">
+        <classes>
+            <class name="tests.CreateProjectTest"></class>
+        </classes>
+    </test>
     <test name="Create new suite">
         <classes>
             <class name="tests.CreateSuiteTest"></class>
@@ -21,21 +21,21 @@
             <class name="tests.CreateCaseTest"></class>
         </classes>
     </test>
-<!--    <test name="Start test run">-->
-<!--        <classes>-->
-<!--            <class name="tests.StartRunTest"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Mark test case as Passed">-->
-<!--        <classes>-->
-<!--            <class name="tests.PassCaseTest"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Mark test case as Failed">-->
-<!--        <classes>-->
-<!--            <class name="tests.FailCaseTest"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Start test run">
+        <classes>
+            <class name="tests.StartRunTest"></class>
+        </classes>
+    </test>
+    <test name="Mark test case as Passed">
+        <classes>
+            <class name="tests.PassCaseTest"></class>
+        </classes>
+    </test>
+    <test name="Mark test case as Failed">
+        <classes>
+            <class name="tests.FailCaseTest"></class>
+        </classes>
+    </test>
     <test name="Create defect">
         <classes>
             <class name="tests.CreateDefectTest"></class>
