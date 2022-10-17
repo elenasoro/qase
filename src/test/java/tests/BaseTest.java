@@ -13,10 +13,7 @@ import java.awt.*;
 public class BaseTest {
 
     @BeforeSuite
-//    @Parameters({"browser"})
-//    public void setUp(@Optional("chrome") String browser) {
         public void setUp() {
-//        Configuration.browser = browser;
         Configuration.timeout = 10000;
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
         int width = (int) size.getWidth();

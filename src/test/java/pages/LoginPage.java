@@ -24,7 +24,6 @@ public class LoginPage {
     public ProjectsPage login(LoginModel loginModel) {
         open(Urls.LOGIN_URL);
         LOGGER.info(String.format("Page %s opened", LoginPage.class.getName()));
-        System.out.println(loginModel.getEmail());
         emailField.sendKeys(loginModel.getEmail());
         LOGGER.info(String.format("Email is entered"));
         passwordField.sendKeys(loginModel.getPassword());
