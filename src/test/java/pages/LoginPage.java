@@ -14,11 +14,12 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class LoginPage {
+
+    private static final Logger LOGGER = LogManager.getLogger(LoginPage.class.getName());
+
     private SelenideElement emailField = $(By.id("inputEmail"));
     private SelenideElement passwordField = $(By.id("inputPassword"));
     private SelenideElement loginButton = $(By.id("btnLogin"));
-
-    private static final Logger LOGGER = LogManager.getLogger(LoginPage.class.getName());
 
     public ProjectsPage login(LoginModel loginModel) {
         open(Urls.LOGIN_URL);
@@ -33,6 +34,4 @@ public class LoginPage {
         LOGGER.info(String.format("Login button clicked"));
         return new ProjectsPage();
     }
-
-
 }

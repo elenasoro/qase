@@ -4,11 +4,13 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import models.LoginModel;
+import models.NewMemberModel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.InvitesPage;
 import pages.LoginPage;
 import testdata.PrepareLoginData;
+import testdata.PrepareNewMemberData;
 import utils.RetryAnalyzer;
 
 public class InviteMemberTest extends BaseTest{
@@ -20,9 +22,10 @@ public class InviteMemberTest extends BaseTest{
         LoginModel loginModel = PrepareLoginData.getValidData();
         loginPage.login(loginModel);
         InvitesPage invitesPage = new InvitesPage();
+        NewMemberModel memberModel = PrepareNewMemberData.getValidData();
         boolean isSuccessNotificationDisplayed = invitesPage
                 .openInvitesPage()
-                .fillInNewMemberForm()
+                .fillInNewMemberForm(memberModel)
                 .isNotificationDisplayed();
         Assert.assertTrue(isSuccessNotificationDisplayed, "Member is not invited");
     }
