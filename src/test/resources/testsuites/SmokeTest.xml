@@ -21,11 +21,11 @@
             <class name="tests.CreateCaseTest"></class>
         </classes>
     </test>
-    <test name="Start test run">
-        <classes>
-            <class name="tests.StartRunTest"></class>
-        </classes>
-    </test>
+<!--    <test name="Start test run">-->
+<!--        <classes>-->
+<!--            <class name="tests.StartRunTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
 <!--    <test name="Mark test case as Passed">-->
 <!--        <classes>-->
 <!--            <class name="tests.PassCaseTest"></class>-->
